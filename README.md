@@ -28,7 +28,7 @@ npm run dev
 ## API Base URL Live Link
 
 http://localhost:5000/api   and
-https://admission-crm-production.up.railway.app/api/
+https://admission-crm-production.up.railway.app
 
 ## AI Usage
 
