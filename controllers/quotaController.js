@@ -5,5 +5,10 @@ exports.create = async (req, res) => {
 };
 
 exports.getAll = async (req, res) => {
-  res.json(await Quota.find(req.query));
+  const data = await Quota.find(req.query).populate({
+    path: "programId",
+    select: "name code -_id" // 👈 program name & code
+  });
+
+  res.json(data);
 };

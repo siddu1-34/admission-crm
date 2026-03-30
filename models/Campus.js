@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 
-module.exports = mongoose.model("Campus", new mongoose.Schema({
-  institutionId: { type: mongoose.Schema.Types.ObjectId, ref: "Institution" },
-  name: String
-}));
+const campusSchema = new mongoose.Schema({
+  institutionId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Institution", // ✅ must match model name
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
+  }
+}, { timestamps: true });
+
+module.exports = mongoose.model("Campus", campusSchema);
